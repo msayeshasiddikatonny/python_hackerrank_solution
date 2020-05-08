@@ -1,0 +1,15 @@
+mark=[]
+scores=[]
+
+
+if __name__ == '__main__':
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        mark+=[[name,score]]
+        scores+=[score]
+    x=sorted(set(scores))[1]
+
+    for n,s in sorted(mark):
+        if s==x:
+            print(n)
