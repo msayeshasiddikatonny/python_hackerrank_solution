@@ -1,0 +1,32 @@
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+stri=input()
+num=[]
+for  ch in stri:
+    x=ord(ch)
+    num.append(x)
+numberodd=[]
+numbereven=[]
+upper=[]
+lower=[]
+
+for i in range (0,len(num)):
+    if num[i]>47 and num[i]<58 and num[i]%2==1 :
+        numberodd.append(chr(num[i]))
+    elif num[i]>47 and num[i]<58 and num[i]%2==0 :
+        numbereven.append(chr(num[i]))
+    elif num[i]>64 and num[i]<91:
+        upper.append(chr(num[i]))
+    elif num[i]>96 and num[i]<123:
+        lower.append(chr(num[i]))
+numberodd.sort()
+numbereven.sort()
+upper.sort()
+lower.sort()
+ 
+new="".join(lower)
+new=new+"".join(upper)
+new=new+"".join(numberodd)
+new=new+"".join(numbereven)
+print(new)
+
