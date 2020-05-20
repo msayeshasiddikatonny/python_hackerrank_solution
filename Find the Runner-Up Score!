@@ -1,0 +1,8 @@
+if __name__ == '__main__':
+    n = int(raw_input())
+    arr = map(int, raw_input().split())
+    p=max(arr)
+    for i in range(len(arr)):
+        if (p==arr[i]):
+            arr[i]=-101
+    print(max(arr))
