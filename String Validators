@@ -1,0 +1,9 @@
+if __name__ == '__main__':
+    s = raw_input()
+    t = type(s)
+    #print(s.isalnum())
+    print any(t.isalnum(c)  for c in s)
+    print any(t.isalpha(c)  for c in s)
+    print any(t.isdigit(c)  for c in s)
+    print any(t.islower(c)  for c in s)
+    print any(t.isupper(c)  for c in s)
