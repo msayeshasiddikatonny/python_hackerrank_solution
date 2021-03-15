@@ -1,0 +1,21 @@
+if __name__ == '__main__':
+    N = int(input())
+    l=list()
+    for i in range(0,N):
+       query = input().split()
+        
+        #re= s.split(" ")
+       if query[0]=='insert' and len(query)>1:
+            l.insert(int(query[1]),int(query[2]))
+       elif  query[0]=='print':
+            print(l)
+       elif query[0]=='remove':
+            l.remove(int(query[1]))
+       elif query[0]=='append':
+            l.append(int(query[1]))
+       elif query[0]=='sort':
+            l.sort()
+       elif query[0]=='pop':
+            l.pop()
+       elif query[0]=='reverse':
+            l.reverse()
