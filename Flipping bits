@@ -1,0 +1,138 @@
+'''
+You will be given a list of 32 bit unsigned integers. Flip all the bits ( and ) and return the result as an unsigned integer.
+
+Example
+
+. We're working with 32 bits, so:
+
+
+
+Return .
+
+Function Description
+
+Complete the flippingBits function in the editor below.
+
+flippingBits has the following parameter(s):
+
+int n: an integer
+Returns
+
+int: the unsigned decimal integer result
+Input Format
+
+The first line of the input contains , the number of queries.
+Each of the next  lines contain an integer, , to process.
+
+Constraints
+
+
+
+Sample Input 0
+
+3
+2147483647
+1
+0
+Sample Output 0
+
+2147483648
+4294967294
+4294967295
+Explanation 0
+
+
+
+
+
+
+
+Sample Input 1
+
+2
+4
+123456
+Sample Output 1
+
+4294967291
+4294843839
+Explanation 1
+
+
+
+
+
+Sample Input 2
+
+3
+0
+802743475
+35601423
+Sample Output 2
+
+4294967295
+3492223820
+4259365872
+Explanation 2
+
+
+
+
+
+
+
+
+'''
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'flippingBits' function below.
+#
+# The function is expected to return a LONG_INTEGER.
+# The function accepts LONG_INTEGER n as parameter.
+#
+
+def flippingBits(n):
+     # Write your code here
+    b=''
+    c=0
+    while n>0:
+        b+=str(n%2)
+        n=n//2
+    re=''
+    for i in range(len(b)-1,-1,-1):
+        re+=b[i]
+    re=(32-len(re))*'0'+re
+    flip=''
+    for i in re:
+        if i=='1':
+            flip+='0'
+        else:
+            flip+='1'
+    flip=flip
+    other=0
+    j=31
+    for i in range(0,len(flip)):
+        other+=int(flip[i])*(2**j)
+        j-=1
+    return other
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    q = int(input().strip())
+
+    for q_itr in range(q):
+        n = int(input().strip())
+
+        result = flippingBits(n)
+
+        fptr.write(str(result) + '\n')
+
+    fptr.close()
